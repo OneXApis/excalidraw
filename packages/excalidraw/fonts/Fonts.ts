@@ -23,7 +23,11 @@ import { NunitoFontFaces } from "./Nunito";
 import { VirgilFontFaces } from "./Virgil";
 import { XiaolaiFontFaces } from "./Xiaolai";
 
-import { FONT_METADATA, type FontMetadata } from "./FontMetadata";
+import {
+  FONT_METADATA,
+  GOOGLE_FONTS_RANGES,
+  type FontMetadata,
+} from "./FontMetadata";
 import type {
   ExcalidrawElement,
   ExcalidrawTextElement,
@@ -382,6 +386,46 @@ export class Fonts {
     init("Lilita One", ...LilitaFontFaces);
     init("Nunito", ...NunitoFontFaces);
     init("Virgil", ...VirgilFontFaces);
+
+    // fonts served by the host app from `/fonts/<file>.woff2`
+    const origin = typeof window !== "undefined" ? window.location.origin : "";
+    const appFont = (
+      file: string,
+      unicodeRange: string,
+    ): ExcalidrawFontFaceDescriptor => ({
+      uri: `${origin}/fonts/${file}.woff2`,
+      descriptors: { unicodeRange },
+    });
+    init(
+      "Roboto",
+      appFont("roboto-vietnamese", GOOGLE_FONTS_RANGES.VIETNAMESE),
+      appFont("roboto-latin", GOOGLE_FONTS_RANGES.LATIN),
+    );
+    init(
+      "Inter",
+      appFont("inter-vietnamese", GOOGLE_FONTS_RANGES.VIETNAMESE),
+      appFont("inter-latin", GOOGLE_FONTS_RANGES.LATIN),
+    );
+    init(
+      "Montserrat",
+      appFont("montserrat-vietnamese", GOOGLE_FONTS_RANGES.VIETNAMESE),
+      appFont("montserrat-latin", GOOGLE_FONTS_RANGES.LATIN),
+    );
+    init(
+      "Be Vietnam Pro",
+      appFont("be-vietnam-pro-vietnamese-400", GOOGLE_FONTS_RANGES.VIETNAMESE),
+      appFont("be-vietnam-pro-latin-400", GOOGLE_FONTS_RANGES.LATIN),
+    );
+    init(
+      "Noto Serif",
+      appFont("noto-serif-vietnamese", GOOGLE_FONTS_RANGES.VIETNAMESE),
+      appFont("noto-serif-latin", GOOGLE_FONTS_RANGES.LATIN),
+    );
+    init(
+      "Lora",
+      appFont("lora-vietnamese", GOOGLE_FONTS_RANGES.VIETNAMESE),
+      appFont("lora-latin", GOOGLE_FONTS_RANGES.LATIN),
+    );
 
     // fallback font faces
     init(CJK_HAND_DRAWN_FALLBACK_FONT, ...XiaolaiFontFaces);

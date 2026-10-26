@@ -137,6 +137,13 @@ export const FONT_FAMILY = {
   "Lilita One": 7,
   "Comic Shanns": 8,
   "Liberation Sans": 9,
+  // fonts served by the host app from `/fonts` (see `Fonts.init`)
+  Roboto: 20,
+  Inter: 21,
+  Montserrat: 22,
+  "Be Vietnam Pro": 23,
+  "Noto Serif": 24,
+  Lora: 25,
 };
 
 export const FONT_FAMILY_FALLBACKS = {

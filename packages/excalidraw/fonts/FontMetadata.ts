@@ -111,6 +111,54 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
     },
     serverSide: true,
   },
+  [FONT_FAMILY.Roboto]: {
+    metrics: {
+      unitsPerEm: 2048,
+      ascender: 1900,
+      descender: -500,
+      lineHeight: 1.25,
+    },
+  },
+  [FONT_FAMILY.Inter]: {
+    metrics: {
+      unitsPerEm: 2048,
+      ascender: 1984,
+      descender: -494,
+      lineHeight: 1.25,
+    },
+  },
+  [FONT_FAMILY.Montserrat]: {
+    metrics: {
+      unitsPerEm: 1000,
+      ascender: 968,
+      descender: -251,
+      lineHeight: 1.25,
+    },
+  },
+  [FONT_FAMILY["Be Vietnam Pro"]]: {
+    metrics: {
+      unitsPerEm: 1000,
+      ascender: 1000,
+      descender: -265,
+      lineHeight: 1.25,
+    },
+  },
+  [FONT_FAMILY["Noto Serif"]]: {
+    metrics: {
+      unitsPerEm: 1000,
+      ascender: 1069,
+      descender: -293,
+      lineHeight: 1.25,
+    },
+  },
+  [FONT_FAMILY.Lora]: {
+    metrics: {
+      unitsPerEm: 1000,
+      ascender: 1006,
+      descender: -274,
+      lineHeight: 1.25,
+    },
+  },
   [FONT_FAMILY_FALLBACKS.Xiaolai]: {
     metrics: {
       unitsPerEm: 1000,
